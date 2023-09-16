@@ -681,12 +681,17 @@ footer {
   align-items: center;
 }
 
-.go-back > p {
+.go-back > p:nth-child(1),
+a {
   cursor: pointer;
   display: inline-flex;
   color: var(--clr-btn);
   font-weight: var(--fw-title);
   font-size: 0.875rem;
+}
+
+.go-back > a {
+  text-decoration: none;
 }
 
 .cancel-card {

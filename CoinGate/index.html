@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Gate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container">
+        <Nav class="nav-wrapper flex">
+            <div class="page_title">
+                <h1>Nordvpn S.A</h1>
+            </div>
+            <div class="nav_menu flex">
+                <div class="login flex card border-radius">
+                    <div class="logo-login">
+                        <img alt="account" src="/Coingate-26829/Coingate.png"
+                            style="min-width: 20px; max-width: 20px; min-height: 20px; max-height: 20px;">
+                    </div>
+                    <p>Log in</p>
+                </div>
+                <div class="more_info border-radius" id="more_info_pop_up">
+                    <i class="fa-solid fa-ellipsis-vertical" id="cancel-mark"></i>
+                </div>
+                <div class="cancel border-radius" id="btnCancel">
+                    <p id="btn-cancel">Cancel</p>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </div>
+        </Nav>
+        <div class=" more_info_card flex border-radius card-shadow-more-info" id="more_info_pop_up_card">
+            <a href="#">Forward Invoice</a>
+            <a href="#">Enable Notifications</a>
+            <hr class="divider">
+            <a href="#">Need help</a>
+            <hr class="divider">
+            <a href="#">Buy Crypto <i class="fa-solid fa-arrow-right" style="padding-left: 5px;"></i></a>
+        </div>
+
+        <div class="card-gradient flex card-shadow">
+            <div class="main-card" id="mainCard">
+                <div class="email-card">
+                    <div class="email-card-header flex">
+                        <h1 class="primary-heading">
+                            Enter Your Email
+                        </h1>
+                        <button class="footer-btn-info-1" tabindex="0" type="button" data-test="info-button"
+                            id="show-info-card-1">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="email-go-back" id="goBack">
+                        <p>Go back</p>
+                    </div>
+                    <p class="email-refund-text">Email needed for CoinGate receipt and refund. </p>
+                </div>
+                <div class="main-card-content">
+                    <form action="#">
+                        <div class="email-form">
+                            <label class="email-input-label" data-shrink="false" title="Label" for="email">Please enter
+                                email or continue without
+                                email</label>
+                            <div class="input-email">
+                                <input name="email" placeholder="Your email for receipt" type="text"
+                                    class="email-input-area" value="xyz@gmail.co" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="form-btns">
+                        <button class="form-continue-btn" type="button">Continue
+                        </button>
+                        <button class="form-wo-continue-btn" type="button">
+                            Continue without email
+                        </button>
+                    </div>
+
+                    <footer>
+                        <div class="main-footer">
+                            <div>
+                                <p class="footer-text">NordProducts</p>
+                                <p class="footer-text-data">123.93 USD</p>
+                            </div>
+                            <div class="flex">
+                                <div>
+                                    <button class="footer-btn-primary" tabindex="-1" type="button"
+                                        data-test="continue-button">Continue</button>
+                                    <button class="footer-btn-info" tabindex="0" type="button" data-test="info-button"
+                                        id="show-info-card">
+                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                            viewBox="0 0 1024 1024" height="18" width="18"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+
+                <div class="additional-card" id="additional-card-id">
+                    <div>
+                        <div class="additional-card-header">
+                            <h2 class="additional-card-title">Additional information</h2>
+                            <i class="fa-solid fa-x" id="info-icon"></i>
+                        </div>
+                        <div class="summary-card">
+                            <h2 class="order-summary">Order summary</h2>
+                            <div class="order-summary-details">
+                                <div class="detail-1">
+                                    <p class="title">Order</p>
+                                    <p class="value">NordVPN</p>
+                                </div>
+                                <div class="detail-2">
+                                    <p class="title">Merchant order number</p>
+                                    <p class="value">18392722</p>
+                                </div>
+                                <div class="detail-3">
+                                    <p class="title">CoinGate order ID</p>
+                                    <p class="value">18392722</p>
+                                </div>
+                                <div class="detail-4 bold-text">
+                                    <p class="title">Price</p>
+                                    <p class="value">102.33 USD</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-card-1" id="additionalCardId">
+            <div>
+                <div class="additional-card-header">
+                    <h2 class="additional-card-title">Additional information</h2>
+                </div>
+                <div class="go-back" id="goBack">
+                    <p>Go back</p>
+                </div>
+                <div class="summary-card">
+                    <h2 class="order-summary">Order summary</h2>
+                    <div class="order-summary-details">
+                        <div class="detail-1">
+                            <p class="title">Order</p>
+                            <p class="value">NordVPN</p>
+                        </div>
+                        <div class="detail-2">
+                            <p class="title">Merchant order number</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-3">
+                            <p class="title">CoinGate order ID</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-4 bold-text">
+                            <p class="title">Price</p>
+                            <p class="value">102.33 USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cancel-card" id="cancelCard">
+            <p class="cancel-card-text">Are you sure you want to cancel your payment?</p>
+            <i class="fa-solid fa-x cancel-card-btn" id="canCardBtn"></i>
+            <p class="cancel-question">All progress will be lost if you cancel this payment process.</p>
+            <div class="cancel-questions-btn">
+                <button class="payment-confirmation" tabindex="0" type="button">No, proceed with payment</button>
+                <button class="cancel-payment-confirmation" tabindex="0" type="button">Yes, cancel payment
+                    process</button>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

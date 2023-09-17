@@ -215,6 +215,14 @@ svg {
   top: 15%;
   left: 15%;
 }
+
+.main-card-wallet {
+  display: none;
+  max-width: 424px;
+  margin: auto;
+  min-height: calc(100vh - 96px);
+}
+
 .primary-heading {
   font-size: var(--fs-title);
   font-weight: var(--fw-title);
@@ -278,6 +286,7 @@ svg {
 .card-gradient {
   border-radius: 20px;
   min-height: calc(100vh - 96px);
+  flex-wrap: wrap;
 }
 .card-gradient::before {
   width: 646px;
@@ -586,6 +595,27 @@ footer {
   transform: translateY(100%);
 }
 
+.additional-card-1 {
+  display: none;
+  position: fixed;
+  top: 20%;
+  z-index: 99;
+  max-width: 367px;
+  padding: 24px;
+  margin-left: 570px;
+  background: #ffffff;
+  box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.05);
+  -webkit-clip-path: inset(-30px -30px 0px -30px);
+  clip-path: inset(-30px -30px 0px -30px);
+  border-radius: 24px 24px 24px 0px;
+  -webkit-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
 .additional-card-header {
   display: flex;
   justify-content: space-between;
@@ -706,6 +736,21 @@ a {
   position: absolute;
   top: 20%;
   left: 15%;
+  z-index: 3;
+}
+
+.cancel-card-wallet {
+  display: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(33, 32, 32);
+  border-radius: 8px;
+  margin: auto;
+  max-height: calc(100% - 64px);
+  padding: 20px;
+  max-width: 424px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
   z-index: 3;
 }
 
@@ -913,11 +958,296 @@ a {
 .form-wo-continue-btn:hover {
   background-color: rgb(238, 238, 240);
 }
+
+/* style for pay for order page */
+.pay-in-wallet {
+  margin: 0px;
+  font-size: 0.875rem;
+  color: rgb(119, 127, 137);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wallet-warning {
+  font-size: 0.875rem;
+  line-height: 1.4375em;
+  color: rgb(233, 147, 19);
+  margin: 0px;
+  font-weight: 500;
+}
+
+.qr-container {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-pay-btn {
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  line-height: 1.75;
+  padding: 6px 16px;
+  border-radius: 8px;
+  min-height: 40px;
+  min-width: 100%;
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(113, 93, 221);
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+}
+
+.show-qr {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0px;
+  cursor: pointer;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  line-height: 1.75;
+  padding: 6px 16px;
+  border-radius: 8px;
+  box-shadow: none;
+  width: 100%;
+  min-height: 40px;
+  text-transform: none;
+  min-width: 40px;
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(255, 255, 255);
+  color: var(--clr-btn);
+}
+
+.show-qr:hover {
+  background-color: rgb(238, 238, 240);
+}
+
+.qr-container > a {
+  text-decoration: none;
+}
+
+.wallet-amount {
+  gap: 10px;
+  color: rgb(233, 147, 19);
+}
+
+.wallet-amount > p:first-child {
+  color: black;
+  font-weight: 500;
+}
+
+.copyItems-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.copyAddress-container {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.copy-bar,
+.copy-address-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-right: 4px;
+  background-color: rgb(238, 238, 240);
+  border-radius: 8px;
+  height: 48px;
+  padding-left: 16px;
+  color: rgb(33, 32, 32);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.copy-address-bar {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* max-width: 600px; */
+}
+
+.copy-bar:hover {
+  background-color: rgb(227, 227, 227);
+}
+
+#copyValue {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#copyButton {
+  position: relative;
+  right: 5%;
+  font-size: 1rem;
+}
+
+#copyAddressBtn {
+}
+
+.icon-container {
+  display: inline-flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  line-height: 1.75;
+  padding: 6px 16px;
+  border-radius: 8px;
+  box-shadow: none;
+  min-height: 40px;
+  text-transform: none;
+  min-width: 40px;
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(238, 238, 240);
+}
+
+#copyAddressText {
+  width: 100%;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qr-btn,
+.Address-btn {
+  background-color: rgb(238, 238, 240);
+  color: rgb(119, 127, 137);
+  padding: 8px 4px 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.qr-btn:hover {
+  background-color: rgb(227, 227, 227);
+}
+
+.Address-wallet {
+  color: black;
+  font-weight: 500;
+}
+
+.transaction-failure-reason {
+  text-align: center;
+  font-size: 12px;
+  color: rgb(119, 127, 137);
+  margin: 15px 0;
+}
+
+.payment-disclaimer {
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: rgb(178, 182, 188);
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-rectangle {
+  border: 2px solid var(--clr-btn);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-right: 5px;
+  border-radius: 8px;
+  min-height: 40px;
+  min-width: 42px;
+  padding: 5px 15px;
+  color: var(--clr-btn);
+}
+
+.countdown-timer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: countdown-animation 1200s linear;
+}
+
+.additional-card-wallet {
+  display: none;
+  position: fixed;
+  top: 20%;
+  z-index: 99;
+  max-width: 367px;
+  padding: 24px;
+  margin-left: 70%;
+  background: #ffffff;
+  box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.05);
+  -webkit-clip-path: inset(-30px -30px 0px -30px);
+  clip-path: inset(-30px -30px 0px -30px);
+  border-radius: 24px 24px 24px 0px;
+  -webkit-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.truncate-text {
+  margin: 0; /* Remove any default margins */
+}
+
+@keyframes countdown-animation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
 @media (min-width: 1200px) {
   .card-gradient {
     max-width: 1200px;
   }
 }
+
 @media only screen and (max-width: 1200px) {
   :root {
     --fs-logo: 1rem;
@@ -952,5 +1282,44 @@ a {
     margin-top: 48px;
     margin-bottom: 24px;
     display: inline-flex;
+  }
+
+  .show-qr {
+    display: inline-flex;
+  }
+  .qr-image {
+    display: none;
+  }
+
+  #copyAddressText {
+    width: 100%;
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .copy-address-bar {
+    flex-shrink: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    /* max-width: 600px; */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cancel-card-wallet {
+    position: absolute;
+    max-width: 80%;
+    top: 20%;
+    left: 15%;
+    right: 10%;
+    z-index: 3;
+    overflow-y: visible;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .copyAddress-container {
+    max-width: none; /* Remove the max-width restriction */
   }
 }

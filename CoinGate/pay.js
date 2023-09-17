@@ -249,3 +249,70 @@ document.addEventListener('click', (event) => {
     overlay.style.display = 'none';
   }
 });
+
+//qr code pop up
+const popQrCode = document.getElementById('popQrCode');
+const qrCopyBtn = document.getElementById('qr-btn-container');
+const qrBtn = document.getElementById('qrBtn');
+const addressBtn = document.getElementById('addressBtn');
+
+qrCopyBtn.addEventListener('click', () => {
+  console.log('clicked');
+  event.stopPropagation();
+  if (popQrCode.style.display === 'none') {
+    popQrCode.style.display = 'block';
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  } else {
+    popQrCode.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (!popQrCode.contains(event.target) && event.target !== qrCopyBtn) {
+    popQrCode.style.display = 'none';
+    overlay.style.display = 'none';
+  }
+});
+
+qrBtn.addEventListener('click', () => {
+  event.stopPropagation();
+  if (popQrCode.style.display === 'none') {
+    popQrCode.style.display = 'block';
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  } else {
+    popQrCode.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (!popQrCode.contains(event.target) && event.target !== qrCopyBtn) {
+    popQrCode.style.display = 'none';
+    overlay.style.display = 'none';
+  }
+});
+
+addressBtn.addEventListener('click', () => {
+  event.stopPropagation();
+  if (popQrCode.style.display === 'none') {
+    popQrCode.style.display = 'block';
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  } else {
+    popQrCode.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (!popQrCode.contains(event.target) && event.target !== qrCopyBtn) {
+    popQrCode.style.display = 'none';
+    overlay.style.display = 'none';
+  }
+});

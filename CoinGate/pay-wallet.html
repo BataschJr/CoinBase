@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Gate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container">
+        <Nav class="nav-wrapper flex">
+            <div class="page_title">
+                <h1>Nordvpn S.A</h1>
+            </div>
+            <div class="nav_menu flex">
+                <div class="login flex card border-radius">
+                    <div class="logo-login">
+                        <img alt="account" src="/Coingate-26829/Coingate.png"
+                            style="min-width: 20px; max-width: 20px; min-height: 20px; max-height: 20px;">
+                    </div>
+                    <p>Log in</p>
+                </div>
+                <div class="more_info border-radius" id="more_info_pop_up">
+                    <i class="fa-solid fa-ellipsis-vertical" id="cancel-mark"></i>
+                </div>
+                <div class="cancel border-radius" id="btnCancel">
+                    <p id="btn-cancel">Cancel</p>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </div>
+        </Nav>
+        <div class=" more_info_card flex border-radius card-shadow-more-info" id="more_info_pop_up_card">
+            <a href="#">Forward Invoice</a>
+            <a href="#">Enable Notifications</a>
+            <hr class="divider">
+            <a href="#">Need help</a>
+            <hr class="divider">
+            <a href="#">Buy Crypto <i class="fa-solid fa-arrow-right" style="padding-left: 5px;"></i></a>
+        </div>
+
+        <div class="card-gradient flex card-shadow">
+            <div class="main-card" id="mainCard">
+                <div class="email-card">
+                    <div class="email-card-header flex">
+                        <h1 class="primary-heading">
+                            Pay For Your Order
+                        </h1>
+                        <button class="footer-btn-info-1" tabindex="0" type="button" data-test="info-button"
+                            id="show-info-card-1">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <p class="pay-in-wallet">Use the “Pay in wallet” button, scan the QR code,
+                    or copy and paste the payment details into your wallet.
+                </p>
+                <p class="wallet-warning">
+                    <span>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+                    The “Pay
+                    in wallet“ button might not work.
+                    <span style="font-size: 1.25rem; color: #715ddd;">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </span>
+                </p>
+                <div class="qr-container">
+                    <button class="qr-pay-btn" tabindex="0" type="button" data-test="pay-in-wallet-button">Pay in wallet
+                    </button>
+
+                    <div style="margin-top: 8px;" class="qr-image">
+                        <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                    style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                    alt="" aria-hidden="true"
+                                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e">
+                            </span>
+                            <img alt="QR code" data-test="QR-code"
+                                src="data:image/png;base64,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"
+                                decoding="async" data-nimg="intrinsic"
+                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                    </div>
+
+                    <button class="show-qr" tabindex="0" type="button" id="qr-btn-container">
+                        <span>
+                            <i class="fa-solid fa-qrcode" id="qr-copy-btn" style="margin-right: 10px;"></i>
+                        </span>Pay in wallet
+                    </button>
+                    <a href="" target="_blank" data-test="link-invoice-how-to-pay" class="css-70qvj9 e32m8fa0">
+                        <p class=" css-361111">How to pay with crypto
+                            <span style="font-size: 1.25rem;">
+                                <i class="fa-solid fa-circle-question"></i>
+                            </span>
+                        </p>
+                    </a>
+
+                </div>
+                <hr class="divider">
+                </hr>
+
+                <div class="copyItems-container">
+                    <div class="flex wallet-amount">
+                        <p>Amount</p>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p class="small-text-mobile css-4m3aef">Selected network: Ethereum</p>
+                    </div>
+                    <div class="copyValues-container flex" style="margin-bottom: 20px;">
+                        <div class="copy-bar" id="copyBar">
+                            <span id="copyValue">0.06372957 ETH</span>
+                            <i class="fa-solid fa-copy" id="copyButton"></i>
+                        </div>
+                        <div class="qr-btn" id="qrBtn">
+                            <i class="fa-solid fa-qrcode" id="qr-copy-btn"></i>
+                        </div>
+                    </div>
+                    <div class="flex Address-wallet">
+                        <p>
+                            Address
+                        </p>
+                    </div>
+                    <div class="copyAddress-container flex">
+                        <div class="copy-address-bar" id="copyAddress">
+                            <p id="copyAddressText" class="">
+                                0x48fb6307C2318f0D73Bf807e92f6E6959F90A184
+                            </p>
+                            <div class="icon-container" id="iconContainer">
+                                <i class="fa-solid fa-copy" id="copyAddressBtn"></i>
+                            </div>
+                        </div>
+
+                        <div class="Address-btn" id="addressBtn">
+                            <i class="fa-solid fa-qrcode" id="addressCopyBtn"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="transaction-failure-reason">Transactions sent from an exchange might fail. Here is why.
+                </p>
+                <div class="powered-by-container" style="margin-bottom: 100px;">
+                    <div class="powered-by">
+                        <p class="powered-by-text">Powered by</p>
+                        <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                    style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                    alt="" aria-hidden="true"
+                                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2793.47058823529412%27%20height=%2714%27/%3e"></span>
+                            <img alt="CoinGate logo" src="/coingate.svg" decoding="async" data-nimg="intrinsic"
+                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                srcset="/coingate.svg 1x, /coingate.svg 2x"></span>
+                    </div>
+                </div>
+                <footer>
+                    <div class="main-footer">
+                        <div>
+                            <p class="footer-text">NordProducts</p>
+                            <p class="footer-text-data">123.93 USD</p>
+                        </div>
+                        <div class="flex">
+                            <div class="countdown-container">
+                                <div class="countdown-rectangle" id="countdownRectangle">
+                                    <div class="countdown-timer" id="countdownTimer">20:00</div>
+                                </div>
+                            </div>
+                            <button class="footer-btn-info" tabindex="0" type="button" data-test="info-button"
+                                id="show-info-card">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+        <div>
+            <div class="cancel-card-wallet" id="cancelCard">
+                <p class="cancel-card-text">Are you sure you want to cancel your payment?</p>
+                <i class="fa-solid fa-x cancel-card-btn" id="canCardBtn"></i>
+                <p class="cancel-question">All progress will be lost if you cancel this payment process.</p>
+                <div class="cancel-questions-btn">
+                    <button class="payment-confirmation" tabindex="0" type="button">No, proceed with payment</button>
+                    <button class="cancel-payment-confirmation" tabindex="0" type="button">Yes, cancel payment
+                        process</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-card-1" id="additional-card-id-1">
+            <div>
+                <div class="additional-card-header">
+                    <h2 class="additional-card-title">Additional information</h2>
+                    <i class="fa-solid fa-x" id="info-icon"></i>
+                </div>
+                <div class="summary-card">
+                    <h2 class="order-summary">Order summary</h2>
+                    <div class="order-summary-details">
+                        <div class="detail-1">
+                            <p class="title">Order</p>
+                            <p class="value">NordVPN</p>
+                        </div>
+                        <div class="detail-2">
+                            <p class="title">Merchant order number</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-3">
+                            <p class="title">CoinGate order ID</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-4 bold-text">
+                            <p class="title">Price</p>
+                            <p class="value">102.33 USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-card-1" id="additionalCardId">
+            <div>
+                <div class="additional-card-header">
+                    <h2 class="additional-card-title">Additional information</h2>
+                </div>
+                <div class="go-back" id="goBack-responsive">
+                    <p>Go back</p>
+                </div>
+                <div class="summary-card">
+                    <h2 class="order-summary">Order summary</h2>
+                    <div class="order-summary-details">
+                        <div class="detail-1">
+                            <p class="title">Order</p>
+                            <p class="value">NordVPN</p>
+                        </div>
+                        <div class="detail-2">
+                            <p class="title">Merchant order number</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-3">
+                            <p class="title">CoinGate order ID</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-4 bold-text">
+                            <p class="title">Price</p>
+                            <p class="value">102.33 USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="pop-qr-code" id="popQrCode">
+                <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
+                    <span
+                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
+                        <img style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                            alt="" aria-hidden="true"
+                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27160%27%20height=%27160%27/%3e">
+                    </span>
+                    <img alt="QR code" data-test="QR-code"
+                        src="data:image/png;base64,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"
+                        decoding="async" data-nimg="intrinsic"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;">
+                </span>
+
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    </div>
+
+
+
+
+
+    <script src="pay.js"></script>
+</body>
+
+</html>

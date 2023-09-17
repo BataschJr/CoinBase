@@ -42,9 +42,9 @@
             <a href="#">Buy Crypto <i class="fa-solid fa-arrow-right" style="padding-left: 5px;"></i></a>
         </div>
         <div class="card-gradient flex">
-            <div class="success-card" id="SuccessCard">
-                <div class="display-success-card flex" id="">
-                    <button class="footer-btn-info-success" tabindex="0" type="button" data-test="info-button"
+            <div class="ErrorCard" id="ErrorCardCancel">
+                <div class="display-cancel-card flex" id="">
+                    <button class="footer-btn-info-cancel" tabindex="0" type="button" data-test="info-button"
                         id="show-info-card-1">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
                             height="18" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -54,8 +54,8 @@
                         </svg>
                     </button>
                     <div style="width: 100%;">
-                        <h2 class="SuccessAlertCard">
-                            Order is Successful!
+                        <h2 class="ErrorAlertCard">
+                            Order is Canceled!
                         </h2>
                         <button class="return-to-merchant" tabindex="0" type="button">Return to Merchant Page</button>
                     </div>
@@ -77,10 +77,10 @@
                     </div>
                 </div>
                 <footer>
-                    <div class="main-footer-success">
+                    <div class="main-footer-cancel">
                         <div class="flex">
                             <div>
-                                <a class="footer-btn-primary-success" href="index.html">Return to Merchant Page</a>
+                                <a class="footer-btn-primary-cancel" href="index.html">Return to Merchant Page</a>
                                 <button class="footer-btn-info" tabindex="0" type="button" data-test="info-button"
                                     id="show-info-card">
                                     <svg stroke="currentColor" fill="currentColor" stroke-width="0"
@@ -97,7 +97,7 @@
                 </footer>
             </div>
 
-            <div class="additional-card-success" id="additionalCardIdCancel">
+            <div class="additional-card-cancel" id="additionalCardIdCancel">
                 <div>
                     <div class="additional-card-header">
                         <h2 class="additional-card-title">Additional information</h2>
@@ -161,7 +161,7 @@
     </div>
 
 
-    <script src="order-complete.js"></script>
+    <script src="cancelCard.js"></script>
 </body>
 
 </html>

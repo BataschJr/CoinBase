@@ -179,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggleInfoBtn.addEventListener('click', () => {
     popupInfoCard.classList.toggle('show-additional-card');
-    console.log('click');
 
     const isCardShown = popupInfoCard.classList.contains('show-additional-card');
     popupInfoCard.style.maxHeight = isCardShown ? popupInfoCard.scrollHeight + 'px' : '0';
@@ -241,12 +240,14 @@ btnCancel.addEventListener('click', () => {
 canCardBtn.addEventListener('click', () => {
   cancelCard.style.display = 'none';
   overlay.style.display = 'none';
+  document.body.style.overflow = 'auto';
 });
 
 document.addEventListener('click', (event) => {
   if (!cancelCard.contains(event.target) && event.target !== btnCancel) {
     cancelCard.style.display = 'none';
     overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
 });
 

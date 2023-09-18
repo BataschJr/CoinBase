@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Gate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container">
+        <Nav class="nav-wrapper flex">
+            <div class="page_title">
+                <h1>Nordvpn S.A</h1>
+            </div>
+            <div class="nav_menu flex">
+                <div class="login flex card border-radius">
+                    <div class="logo-login">
+                        <img alt="account" src="/Coingate-26829/Coingate.png"
+                            style="min-width: 20px; max-width: 20px; min-height: 20px; max-height: 20px;">
+                    </div>
+                    <p>Log in</p>
+                </div>
+                <div class="more_info border-radius" id="more_info_pop_up">
+                    <i class="fa-solid fa-ellipsis-vertical" id="cancel-mark"></i>
+                </div>
+            </div>
+        </Nav>
+        <div class=" more_info_card flex border-radius card-shadow-more-info" id="more_info_pop_up_card">
+            <a href="#">Forward Invoice</a>
+            <a href="#">Enable Notifications</a>
+            <hr class="divider">
+            <a href="#">Need help</a>
+            <hr class="divider">
+            <a href="#">Buy Crypto <i class="fa-solid fa-arrow-right" style="padding-left: 5px;"></i></a>
+        </div>
+        <div class="card-gradient flex">
+            <div class="success-card" id="SuccessCard">
+                <div class="display-success-card flex" id="">
+                    <button class="footer-btn-info-success" tabindex="0" type="button" data-test="info-button"
+                        id="show-info-card-1">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                            height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div style="width: 100%;">
+                        <h2 class="SuccessAlertCard">
+                            Order is Successful!
+                        </h2>
+                        <button class="return-to-merchant" tabindex="0" type="button">Return to Merchant Page</button>
+                    </div>
+
+                </div>
+
+                <div class="powered-by-container" style="margin-bottom: 100px;">
+                    <div class="powered-by">
+                        <p class="powered-by-text">Powered by</p>
+                        <span
+                            style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                                style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                    style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                                    alt="" aria-hidden="true"
+                                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2793.47058823529412%27%20height=%2714%27/%3e"></span>
+                            <img alt="CoinGate logo" src="/coingate.svg" decoding="async" data-nimg="intrinsic"
+                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                                srcset="/coingate.svg 1x, /coingate.svg 2x"></span>
+                    </div>
+                </div>
+                <footer>
+                    <div class="main-footer-success">
+                        <div class="flex">
+                            <div>
+                                <a class="footer-btn-primary-success" href="index.html">Return to Merchant Page</a>
+                                <button class="footer-btn-info" tabindex="0" type="button" data-test="info-button"
+                                    id="show-info-card">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 1024 1024" height="18" width="18"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            <div class="additional-card-success" id="additionalCardIdCancel">
+                <div>
+                    <div class="additional-card-header">
+                        <h2 class="additional-card-title">Additional information</h2>
+                        <i class="fa-solid fa-x" id="info-icon"></i>
+                    </div>
+                    <div class="summary-card">
+                        <h2 class="order-summary">Order summary</h2>
+                        <div class="order-summary-details">
+                            <div class="detail-1">
+                                <p class="title">Order</p>
+                                <p class="value">NordVPN</p>
+                            </div>
+                            <div class="detail-2">
+                                <p class="title">Merchant order number</p>
+                                <p class="value">18392722</p>
+                            </div>
+                            <div class="detail-3">
+                                <p class="title">CoinGate order ID</p>
+                                <p class="value">18392722</p>
+                            </div>
+                            <div class="detail-4 bold-text">
+                                <p class="title">Price</p>
+                                <p class="value">102.33 USD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-card-1" id="additionalCardId">
+                <div>
+                    <div class="additional-card-header">
+                        <h2 class="additional-card-title">Additional information</h2>
+                    </div>
+                    <div class="go-back" id="goBack-responsive">
+                        <p>Go back</p>
+                    </div>
+                    <div class="summary-card">
+                        <h2 class="order-summary">Order summary</h2>
+                        <div class="order-summary-details">
+                            <div class="detail-1">
+                                <p class="title">Order</p>
+                                <p class="value">NordVPN</p>
+                            </div>
+                            <div class="detail-2">
+                                <p class="title">Merchant order number</p>
+                                <p class="value">18392722</p>
+                            </div>
+                            <div class="detail-3">
+                                <p class="title">CoinGate order ID</p>
+                                <p class="value">18392722</p>
+                            </div>
+                            <div class="detail-4 bold-text">
+                                <p class="title">Price</p>
+                                <p class="value">102.33 USD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="order-complete.js"></script>
+</body>
+
+</html>

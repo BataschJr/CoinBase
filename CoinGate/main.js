@@ -204,27 +204,29 @@ const canCardBtn = document.getElementById('canCardBtn');
 
 const overlay = document.getElementById('overlay');
 
-btnCancel.addEventListener('click', () => {
+btnCancel.addEventListener('click', (event) => {
   event.stopPropagation();
-  if (cancelCard.style.display === 'none') {
+  if (cancelCard.style.display === 'none' || cancelCard.style.display === '') {
     cancelCard.style.display = 'block';
     overlay.style.display = 'block';
     document.body.style.overflow = 'hidden';
   } else {
     cancelCard.style.display = 'none';
     overlay.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'visible';
   }
 });
 
 canCardBtn.addEventListener('click', () => {
   cancelCard.style.display = 'none';
   overlay.style.display = 'none';
+  document.body.style.overflow = 'visible';
 });
 
 document.addEventListener('click', (event) => {
   if (!cancelCard.contains(event.target) && event.target !== btnCancel) {
     cancelCard.style.display = 'none';
     overlay.style.display = 'none';
+    document.body.style.overflow = 'visible';
   }
 });

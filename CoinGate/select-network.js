@@ -4,31 +4,19 @@ const cancelMark = document.getElementById('cancel-mark');
 
 toggleButton.addEventListener('click', () => {
   popupContainer.classList.toggle('show');
-  if (popupContainer.classList.contains('show')) {
-    // Set a timeout to change the z-index after a short delay
-    setTimeout(() => {
-      popupContainer.style.zIndex = '9999';
-    }, 10);
-  } else {
-    popupContainer.style.zIndex = '-1'; // Set back to a negative z-index when hiding
-  }
 });
 
 cancelMark.addEventListener('click', (event) => {
-  event.stopPropagation();
-  popupContainer.classList.remove('show');
-  popupContainer.style.zIndex = '-1'; // Set back to a negative z-index when hiding
+  event.stopPropagation(); // Prevent the click event from propagating to the document
+  popupContainer.classList.toggle('show');
 });
 
 document.addEventListener('click', (event) => {
   if (!popupContainer.contains(event.target) && event.target !== toggleButton) {
     popupContainer.classList.remove('show');
-    popupContainer.style.zIndex = '-1'; // Set back to a negative z-index when hiding
   }
 });
 
-//script for selecting the class the elements and adding class
-// Select the pay-option-1 elements and the crypto-list items
 const payOptionElements = document.querySelectorAll('.pay-option-1');
 const cryptoListItems = document.querySelectorAll('.pay-option-1-list');
 
@@ -62,56 +50,6 @@ cryptoListItems.forEach((element) => {
   });
 });
 
-//Search Bar
-const searchInput = document.getElementById('currency-search');
-const cryptoList = document.querySelectorAll('.crypo-list .pay-option-1-list');
-const noResultsMessage = document.getElementById('no-results');
-
-searchInput.addEventListener('input', filterCryptos);
-
-function filterCryptos() {
-  const searchTerm = searchInput.value.toLowerCase();
-  let foundResults = false;
-
-  cryptoList.forEach((crypto) => {
-    const cryptoContent = crypto.textContent.toLowerCase();
-    if (cryptoContent.includes(searchTerm)) {
-      crypto.classList.remove('hidden');
-      foundResults = true;
-    } else {
-      crypto.classList.add('hidden');
-    }
-  });
-
-  // Show/hide the "No results found" message
-  if (foundResults) {
-    noResultsMessage.style.display = 'none';
-  } else {
-    noResultsMessage.style.display = 'block';
-  }
-}
-
-//show search list when pay with crypto is active
-// Get references to the Pay with Crypto and Pay with Binance Pay elements
-const payWithCryptoOption = document.getElementById('paying-option-1');
-const payWithBinanceOption = document.getElementById('paying-option-2');
-
-// Get a reference to the coingate-cryptos division
-const coingateCryptos = document.getElementById('coingate-cryptos');
-
-// Add click event listeners to the pay options
-payWithCryptoOption.addEventListener('click', () => {
-  // Show the coingate-cryptos when Pay with Crypto is clicked
-  coingateCryptos.style.display = 'block';
-});
-
-payWithBinanceOption.addEventListener('click', () => {
-  // Hide the coingate-cryptos when Pay with Binance Pay is clicked
-  coingateCryptos.style.display = 'none';
-});
-
-//Blue btn script
-// Select the blue button and the crypto-list items
 const continueButton = document.querySelector('.footer-btn-primary');
 
 // Function to enable the blue button
@@ -141,18 +79,7 @@ cryptoListItems.forEach((element) => {
 // Initially, disable the blue button (assuming it's disabled by default)
 disablecontinueButton();
 
-// Add click event listeners to the pay options
-payWithCryptoOption.addEventListener('click', () => {
-  // Disable the continue button when Pay with Crypto is clicked
-  continueButton.disabled = true;
-});
-
-payWithBinanceOption.addEventListener('click', () => {
-  // Enable the continue button when Pay with Binance Pay is clicked
-  continueButton.disabled = false;
-});
-
-//script for I btn next to continue to toggle
+// Script for info icon at footer
 document.addEventListener('DOMContentLoaded', () => {
   const toggleInfoBtn = document.getElementById('show-info-card');
   const popupInfoCard = document.getElementById('additional-card-id');
@@ -160,19 +87,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggleInfoBtn.addEventListener('click', () => {
     popupInfoCard.classList.toggle('show-additional-card');
+
+    const isCardShown = popupInfoCard.classList.contains('show-additional-card');
+
+    if (isCardShown) {
+      // If the card is shown, set the max-height to its natural height
+      popupInfoCard.style.maxHeight = popupInfoCard.scrollHeight + 'px';
+
+      // Add a transition effect to smoothly show the card
+      popupInfoCard.style.transition = 'max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    } else {
+      // If the card is hidden, set the max-height to 0
+      popupInfoCard.style.maxHeight = '0';
+
+      // Remove the transition effect
+      popupInfoCard.style.transition = 'max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    }
   });
 
   infoIcon.addEventListener('click', (event) => {
+    console.log('click');
     popupInfoCard.classList.toggle('show-additional-card');
     event.stopPropagation();
   });
 });
 
-// Get the additional card element by its ID
 var footerBtn1 = document.getElementById('show-info-card-1');
 var mainCard = document.getElementById('mainCard');
 var additionalCard = document.getElementById('additionalCardId');
-var goBack = document.getElementById('goBack');
+var goBack = document.getElementById('selectNetworkGoBackAdditionalInfo');
 
 footerBtn1.addEventListener('click', () => {
   mainCard.style.display = 'none';
@@ -180,22 +123,6 @@ footerBtn1.addEventListener('click', () => {
   if ((mainCard.style.display = 'none')) {
     additionalCard.style.display = 'block';
   }
-
-  function hideElementOnLargeScreens() {
-    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-    if (windowWidth > 1200) {
-      additionalCard.style.display = 'none';
-      mainCard.style.display = 'block';
-    } else {
-      additionalCard.style.display = 'block';
-      mainCard.style.display = 'none';
-    }
-  }
-
-  // Call the function on page load and whenever the window is resized
-  window.onload = hideElementOnLargeScreens;
-  window.addEventListener('resize', hideElementOnLargeScreens);
 });
 
 goBack.addEventListener('click', () => {
@@ -244,13 +171,3 @@ document.addEventListener('click', (event) => {
     document.body.style.overflow = 'visible';
   }
 });
-
-//Script to change forms using js
-
-// const indexBontinueBtn = document.getElementById('index-contine-btn');
-// const primaryIndexContainer = document.getElementById('primary-index-container');
-// const mainContainerEmail = document.getElementById('main-container-email');
-// indexBontinueBtn.addEventListener('click', () => {
-//   primaryIndexContainer.style.display = 'none';
-//   mainContainerEmail.style.display = 'block';
-// });

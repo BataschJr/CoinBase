@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Gate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container" id="primary-index-container">
+        <Nav class="nav-wrapper flex">
+            <div class="page_title">
+                <h1>Nordvpn S.A</h1>
+            </div>
+            <div class="nav_menu flex">
+                <div class="login flex card border-radius">
+                    <div class="logo-login">
+                        <img alt="account" src="/Coingate-26829/Coingate.png"
+                            style="min-width: 20px; max-width: 20px; min-height: 20px; max-height: 20px;">
+                    </div>
+                    <p>Log in</p>
+                </div>
+                <div class="more_info border-radius" id="more_info_pop_up">
+                    <i class="fa-solid fa-ellipsis-vertical" id="cancel-mark"></i>
+                </div>
+                <div class="cancel border-radius" id="btnCancel">
+                    <p id="btn-cancel">Cancel</p>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </div>
+        </Nav>
+        <div class=" more_info_card flex border-radius card-shadow-more-info" id="more_info_pop_up_card">
+            <a href="#">Forward Invoice</a>
+            <a href="#">Enable Notifications</a>
+            <hr class="divider">
+            <a href="#">Need help</a>
+            <hr class="divider">
+            <a href="#">Buy Crypto <i class="fa-solid fa-arrow-right" style="padding-left: 5px;"></i></a>
+        </div>
+
+        <div class="card-gradient flex card-shadow">
+            <div class="main-card" id="mainCard">
+                <div class="main-card-responsive flex">
+                    <h1 class="primary-heading"><span>Select Payment <br></span>
+                        <span>Network for ETH</span>
+                        <span class="network-title-question">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+                        <div class="select-network-go-back" id="selectNetworkGoBack">
+                            <p>Go back</p>
+                        </div>
+                        <p class="select-network-warning">
+                            <span class="select-network-warning-exclamation">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                            </span>
+                            Selecting the wrong network (blockchain) will result in lost funds.
+                        </p>
+                    </h1>
+                    <button class="footer-btn-info-select-network" tabindex="0" type="button" data-test="info-button"
+                        id="show-info-card-1">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                            height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="main-card-content">
+                    <div class="coingate-cryptos" id="coingate-cryptos">
+                        <div class="crypto-list-container">
+                            <div class="crypo-list">
+                                <div class="pay-option-1-list flex border-radius">
+                                    <div class="crypto-logo">
+                                        <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
+                                    </div>
+                                    <div class="pay-method-title" id="title-2">
+                                        <p class="pay-main">Ethereum</p>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                    </div>
+                                </div>
+                                <div class="pay-option-1-list flex border-radius">
+                                    <div class="crypto-logo">
+                                        <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
+                                    </div>
+                                    <div class="pay-method-title" id="title-2">
+                                        <p class="pay-main">Cardano</p>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                    </div>
+                                </div>
+                                <div class="pay-option-1-list flex border-radius">
+                                    <div class="crypto-logo">
+                                        <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
+                                    </div>
+                                    <div class="pay-method-title" id="title-2">
+                                        <p class="pay-main">Binance Coin</p>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                    </div>
+                                </div>
+                                <div class="pay-option-1-list flex border-radius">
+                                    <div class="crypto-logo">
+                                        <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
+                                    </div>
+                                    <div class="pay-method-title" id="title-2">
+                                        <p class="pay-main">Litecoin</p>
+                                        <i class="fa-regular fa-circle-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="powered-by-container">
+            <div class="powered-by">
+                <p class="powered-by-text">Powered by</p>
+                <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                            style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                            alt="" aria-hidden="true"
+                            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2793.47058823529412%27%20height=%2714%27/%3e"></span>
+                    <img alt="CoinGate logo" src="/coingate.svg" decoding="async" data-nimg="intrinsic"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: medium; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                        srcset="/coingate.svg 1x, /coingate.svg 2x"></span>
+            </div>
+        </div>
+        <footer>
+            <div class="main-footer">
+                <div>
+                    <p class="footer-text">NordProducts</p>
+                    <p class="footer-text-data">123.93 USD</p>
+                </div>
+                <div class="flex">
+                    <div>
+                        <a class="footer-btn-primary" disabled="" id="index-contine-btn">Continue</a>
+                        <button class="footer-btn-info" tabindex="0" type="button" data-test="info-button"
+                            id="show-info-card">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M448 224a64 64 0 1 0 128 0 64 64 0 1 0-128 0zm96 168h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="additional-card" id="additional-card-id">
+            <div>
+                <div class="additional-card-header">
+                    <h2 class="additional-card-title">Additional information</h2>
+                    <i class="fa-solid fa-x" id="info-icon"></i>
+                </div>
+                <div class="summary-card">
+                    <h2 class="order-summary">Order summary</h2>
+                    <div class="order-summary-details">
+                        <div class="detail-1">
+                            <p class="title">Order</p>
+                            <p class="value">NordVPN</p>
+                        </div>
+                        <div class="detail-2">
+                            <p class="title">Merchant order number</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-3">
+                            <p class="title">CoinGate order ID</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-4 bold-text">
+                            <p class="title">Price</p>
+                            <p class="value">102.33 USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-card-1" id="additionalCardId">
+            <div>
+                <div class="additional-card-header">
+                    <h2 class="additional-card-title">Additional information</h2>
+                </div>
+                <div class="select-network-go-back" id="selectNetworkGoBackAdditionalInfo">
+                    <p>Go back</p>
+                </div>
+                <div class="summary-card">
+                    <h2 class="order-summary">Order summary</h2>
+                    <div class="order-summary-details">
+                        <div class="detail-1">
+                            <p class="title">Order</p>
+                            <p class="value">NordVPN</p>
+                        </div>
+                        <div class="detail-2">
+                            <p class="title">Merchant order number</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-3">
+                            <p class="title">CoinGate order ID</p>
+                            <p class="value">18392722</p>
+                        </div>
+                        <div class="detail-4 bold-text">
+                            <p class="title">Price</p>
+                            <p class="value">102.33 USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cancel-card" id="cancelCard">
+            <p class="cancel-card-text">Are you sure you want to cancel your payment?</p>
+            <i class="fa-solid fa-x cancel-card-btn" id="canCardBtn"></i>
+            <p class="cancel-question">All progress will be lost if you cancel this payment process.</p>
+            <div class="cancel-questions-btn">
+                <button class="payment-confirmation" tabindex="0" type="button">No, proceed with payment</button>
+                <button class="cancel-payment-confirmation" tabindex="0" type="button">Yes, cancel payment
+                    process</button>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+
+    <script src="select-network.js"></script>
+</body>
+
+</html>

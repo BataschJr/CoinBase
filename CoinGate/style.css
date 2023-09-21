@@ -170,9 +170,8 @@ svg {
   border-radius: 10px;
 }
 
-/* Initial styles to hide the card */
 .more_info_card {
-  z-index: -1; /* Start with a negative z-index to place it behind other elements */
+  z-index: 99;
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -186,14 +185,6 @@ svg {
   transform-origin: top right;
   transition: transform 0.3s ease, opacity 0.3s ease; /* Add transitions for scaling and opacity */
   animation-fill-mode: forwards; /* Retain the final state of the animation */
-}
-
-/* Styles for the card when it's shown */
-.more_info_card.show {
-  z-index: 9999; /* Increase the z-index to ensure it's on top */
-  opacity: 1; /* Fade in */
-  transform: scale(1); /* Scale up to 1 */
-  display: flex !important; /* Show the card */
 }
 
 @keyframes showCard {
@@ -219,6 +210,7 @@ svg {
 }
 
 .card-shadow-more-info {
+  z-index: 99;
   box-shadow: -2px -1px 20px #ccc;
 }
 
@@ -239,6 +231,36 @@ svg {
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.12);
   margin: 16px 0px;
+}
+
+.card-gradient {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 20px;
+  min-height: calc(100vh - 96px);
+  overflow: hidden;
+  position: relative; /* Position relative for absolute positioning */
+}
+.card-gradient::before {
+  width: 646px;
+  height: 60vh;
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 60%;
+  left: 50%;
+  background-color: #fff;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  max-width: 694px;
+  box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.05);
+  -webkit-clip-path: inset(-30px -30px 0px -30px);
+  clip-path: inset(-30px -30px 0px -30px);
+  border-radius: 24px 24px 0 0;
 }
 
 .main-card {
@@ -338,36 +360,6 @@ svg {
   font-size: var(--fs-text-subtitle);
   font-weight: var(--fw-text);
   color: var(--clr-secondary);
-}
-
-.card-gradient {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 20px;
-  min-height: calc(100vh - 96px);
-  overflow: hidden;
-  position: relative; /* Position relative for absolute positioning */
-}
-.card-gradient::before {
-  width: 646px;
-  height: 60vh;
-  position: absolute;
-  content: '';
-  z-index: -1;
-  width: 100%;
-  height: 60%;
-  left: 50%;
-  background-color: #fff;
-  -webkit-transform: translate(-50%, 0);
-  -moz-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
-  max-width: 694px;
-  box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.05);
-  -webkit-clip-path: inset(-30px -30px 0px -30px);
-  clip-path: inset(-30px -30px 0px -30px);
-  border-radius: 24px 24px 0 0;
 }
 
 .pay-method-title {
@@ -1015,6 +1007,10 @@ a {
 }
 
 /* style for pay for order page */
+#pay-wallet-container {
+  display: none;
+}
+
 .pay-in-wallet {
   margin: 0px;
   font-size: 0.875rem;
@@ -1310,6 +1306,7 @@ a {
   justify-content: end;
   border-radius: 25px;
   padding: 30px;
+  width: 100%;
 }
 
 .ErrorAlertCard {
@@ -1488,6 +1485,7 @@ a {
   justify-content: end;
   border-radius: 25px;
   padding: 30px;
+  width: 100%;
 }
 
 .SuccessAlertCard {
@@ -1664,16 +1662,23 @@ a {
 }
 
 .select-network-warning {
+  display: flex;
+  align-items: center;
+}
+
+.select-network-warning-exclamation {
+  margin-right: 10px;
+  color: rgb(233, 147, 19);
+  font-size: 0.875rem;
+}
+
+.select-network-head-text {
   font-size: 0.875rem;
   line-height: 1.4375em;
   color: rgb(233, 147, 19);
   font-weight: 500;
   margin: 0;
-  white-space: nowrap;
-}
-
-.select-network-warning-exclamation {
-  margin-right: 10px;
+  /* white-space: nowrap; */
 }
 
 .footer-btn-info-select-network {
@@ -1706,6 +1711,78 @@ a {
   font-weight: 600;
   background-color: rgb(238, 238, 240);
   color: rgb(33, 32, 32);
+}
+
+#email-main_container {
+  display: none;
+}
+
+#select-network-container {
+  display: none;
+}
+
+.pop-qr-code {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  margin: auto;
+  max-height: calc(100% - 64px);
+  padding: 20px;
+  max-width: 100%;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  z-index: 3;
+}
+.pop-qrCode-text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.cancel-card-gradient {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 20px;
+  min-height: calc(100vh - 230px);
+  overflow: hidden;
+  position: relative; /* Position relative for absolute positioning */
+}
+.cancel-card-gradient::before {
+  width: 646px;
+  height: 60vh;
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 60%;
+  left: 50%;
+  background-color: #fff;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  max-width: 694px;
+  box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.05);
+  -webkit-clip-path: inset(-30px -30px 0px -30px);
+  clip-path: inset(-30px -30px 0px -30px);
+  border-radius: 24px 24px 0 0;
+}
+
+.cancel-main-card {
+  width: 646px;
+}
+
+.success-main-card {
+  width: 646px;
+}
+
+#cancelCard-container {
+  display: none;
+}
+
+#orderSuccessful-container {
+  display: none;
 }
 
 @keyframes countdown-animation {
@@ -1796,9 +1873,9 @@ a {
   .return-to-merchant {
     display: inline-flex;
   }
-  /* footer {
+  #successFooter {
     display: none;
-  } */
+  }
 
   .display-cancel-card,
   .display-success-card {
@@ -1841,7 +1918,21 @@ a {
     overflow-y: visible;
   }
 
+  .pop-qr-code {
+    position: absolute;
+    max-width: 100%;
+    top: 20%;
+    left: 15%;
+    right: 20%;
+    z-index: 3;
+    overflow-y: visible;
+  }
+
   .cancel-questions-btn > button {
+    font-size: 0.875rem;
+  }
+
+  .form-btns > a {
     font-size: 0.875rem;
   }
 }

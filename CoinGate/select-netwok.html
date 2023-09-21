@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="main_container" id="primary-index-container">
+    <div class="main_container">
         <Nav class="nav-wrapper flex">
             <div class="page_title">
                 <h1>Nordvpn S.A</h1>
@@ -48,7 +48,7 @@
 
         <div class="card-gradient flex card-shadow">
             <div class="main-card" id="mainCard">
-                <div class="main-card-responsive flex">
+                <div class="main-card-responsive">
                     <h1 class="primary-heading"><span>Select Payment <br></span>
                         <span>Network for ETH</span>
                         <span class="network-title-question">
@@ -57,12 +57,14 @@
                         <div class="select-network-go-back" id="selectNetworkGoBack">
                             <p>Go back</p>
                         </div>
-                        <p class="select-network-warning">
+                        <div class="select-network-warning">
                             <span class="select-network-warning-exclamation">
                                 <i class="fa-solid fa-circle-exclamation"></i>
                             </span>
-                            Selecting the wrong network (blockchain) will result in lost funds.
-                        </p>
+                            <p class="select-network-head-text">
+                                Selecting the wrong network (blockchain) will result in lost funds.
+                            </p>
+                        </div>
                     </h1>
                     <button class="footer-btn-info-select-network" tabindex="0" type="button" data-test="info-button"
                         id="show-info-card-1">
@@ -119,6 +121,38 @@
                     </div>
                 </div>
             </div>
+
+            <div class="additionalCardResponsive" id="additionalCardId">
+                <div>
+                    <div class="additional-card-header">
+                        <h2 class="additional-card-title"><span>Additional<br></span> <span>Information</span></h2>
+                    </div>
+                    <div class="go-back" id="goBack">
+                        <p>Go back</p>
+                    </div>
+                    <div class="summary-card">
+                        <h2 class="order-summary">Order summary</h2>
+                        <div class="order-summary-details">
+                            <div class="detail-1">
+                                <p class="title">Order</p>
+                                <p class="value">NordVPN</p>
+                            </div>
+                            <div class="detail-2">
+                                <p class="title">Merchant order number</p>
+                                <p class="value">18392722</p>
+                            </div>
+                            <div class="detail-3">
+                                <p class="title">CoinGate order ID</p>
+                                <p class="value">18392722</p>
+                            </div>
+                            <div class="detail-4 bold-text">
+                                <p class="title">Price</p>
+                                <p class="value">102.33 USD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="powered-by-container">
@@ -135,6 +169,7 @@
                         srcset="/coingate.svg 1x, /coingate.svg 2x"></span>
             </div>
         </div>
+
         <footer>
             <div class="main-footer">
                 <div>
@@ -188,37 +223,6 @@
             </div>
         </div>
 
-        <div class="main-card-1" id="additionalCardId">
-            <div>
-                <div class="additional-card-header">
-                    <h2 class="additional-card-title">Additional information</h2>
-                </div>
-                <div class="select-network-go-back" id="selectNetworkGoBackAdditionalInfo">
-                    <p>Go back</p>
-                </div>
-                <div class="summary-card">
-                    <h2 class="order-summary">Order summary</h2>
-                    <div class="order-summary-details">
-                        <div class="detail-1">
-                            <p class="title">Order</p>
-                            <p class="value">NordVPN</p>
-                        </div>
-                        <div class="detail-2">
-                            <p class="title">Merchant order number</p>
-                            <p class="value">18392722</p>
-                        </div>
-                        <div class="detail-3">
-                            <p class="title">CoinGate order ID</p>
-                            <p class="value">18392722</p>
-                        </div>
-                        <div class="detail-4 bold-text">
-                            <p class="title">Price</p>
-                            <p class="value">102.33 USD</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="cancel-card" id="cancelCard">
             <p class="cancel-card-text">Are you sure you want to cancel your payment?</p>
             <i class="fa-solid fa-x cancel-card-btn" id="canCardBtn"></i>

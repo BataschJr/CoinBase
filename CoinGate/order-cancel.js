@@ -5,27 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   toggleButton.addEventListener('click', () => {
     popupContainer.classList.toggle('show');
-    if (popupContainer.classList.contains('show')) {
-      popupContainer.style.transform = 'scale(1)'; // Scale up to 1
-      popupContainer.style.opacity = '1'; // Fade in
-    } else {
-      popupContainer.style.transform = 'scale(0)'; // Scale down to 0
-      popupContainer.style.opacity = '0'; // Fade out
-    }
   });
 
   cancelMark.addEventListener('click', (event) => {
     event.stopPropagation();
     popupContainer.classList.remove('show');
-    popupContainer.style.transform = 'scale(0)'; // Scale down to 0
-    popupContainer.style.opacity = '0'; // Fade out
   });
 
   document.addEventListener('click', (event) => {
     if (!popupContainer.contains(event.target) && event.target !== toggleButton) {
       popupContainer.classList.remove('show');
-      popupContainer.style.transform = 'scale(0)'; // Scale down to 0
-      popupContainer.style.opacity = '0'; // Fade out
     }
   });
 
@@ -43,29 +32,29 @@ document.addEventListener('DOMContentLoaded', function () {
     event.stopPropagation();
   });
 
-  var successFooterBtn1 = document.getElementById('success-show-info-card-1');
-  var successCard = document.getElementById('successCard');
-  var successAdditionalCardId = document.getElementById('successAdditionalCardId');
+  var cancelFooterBtn1 = document.getElementById('cancel-show-info-card-1');
+  var cancelCard = document.getElementById('ordercancelCard');
+  var cancelAdditionalCardId = document.getElementById('cancelAdditionalCardId');
   var successGoBack = document.getElementById('successgoBack-responsive');
 
-  successFooterBtn1.addEventListener('click', () => {
+  cancelFooterBtn1.addEventListener('click', () => {
     console.log('clicked');
-    successCard.style.display = 'none';
+    cancelCard.style.display = 'none';
 
-    if ((successCard.style.display = 'none')) {
-      successAdditionalCardId.style.display = 'block';
+    if ((cancelCard.style.display = 'none')) {
+      cancelAdditionalCardId.style.display = 'block';
     }
 
-    if ((successAdditionalCardId.style.display = 'block')) {
-      successCard.style.display = 'none';
+    if ((cancelAdditionalCardId.style.display = 'block')) {
+      cancelCard.style.display = 'none';
     }
 
     function hideElementOnLargeScreens() {
       var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
       if (windowWidth > 1200) {
-        successAdditionalCardId.style.display = 'none';
-        successCard.style.display = 'block';
+        cancelAdditionalCardId.style.display = 'none';
+        cancelCard.style.display = 'block';
       }
     }
 
@@ -75,14 +64,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   successGoBack.addEventListener('click', () => {
-    successAdditionalCardId.style.display = 'none';
+    cancelAdditionalCardId.style.display = 'none';
 
-    if ((successAdditionalCardId.style.display = 'none')) {
-      successCard.style.display = 'block';
+    if ((cancelAdditionalCardId.style.display = 'none')) {
+      cancelCard.style.display = 'block';
     }
   });
 
-  successFooterBtn1.addEventListener('click', (event) => {
+  cancelFooterBtn1.addEventListener('click', (event) => {
     event.stopPropagation(); // Prevent the click event from propagating to the document
   });
 });

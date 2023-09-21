@@ -525,11 +525,13 @@ const otherContainers = document.querySelectorAll('.card-gradient');
 const cancelCardSection = document.getElementById('cancelCard');
 const footerContainer = document.getElementById('footer-container');
 const cancelAdditionalCardId = document.getElementById('cancelAdditionalCardId');
-const additionalCardID = document.getElementById('additional-card-id');
 const returnMerchant = document.getElementById('returnMerchant');
 const indexContinueBtnCan = document.getElementById('index-continue-btn');
 const btnCancelFinal = document.getElementById('btnCancel');
 const orderSuccessfulContainerForCancel = document.getElementById('orderSuccessful-container');
+const coutdownContainerFinal = document.getElementById('coutdownContainer');
+const summaryCancelFinal = document.getElementById('summaryCancelFinal');
+const sectionDividerResponsiveFinal = document.getElementById('sectionDividerResponsiveFinal');
 confirmCancelBtn.addEventListener('click', () => {
   // Hide all other containers
   otherContainers.forEach((container) => {
@@ -537,16 +539,22 @@ confirmCancelBtn.addEventListener('click', () => {
   });
 
   cancelCardSection.style.display = 'none';
-  // footerContainer.style.display = 'none';
   cancelAdditionalCardId.style.display = 'none';
-  additionalCardID.style.display = 'none';
   indexContinueBtnCan.style.display = 'none';
   btnCancelFinal.style.display = 'none';
   orderSuccessfulContainerForCancel.style.display = 'none';
+  coutdownContainerFinal.style.display = 'none';
 
   // Show the cancelCard-container
   cancelCardContainer.style.display = 'flex';
   returnMerchant.style.display = 'inline-flex';
+
+  if (currentBlockIndex === blocks.length - 1) {
+    summaryCancelFinal.style.display = 'flex';
+    sectionDividerResponsiveFinal.style.display = 'block';
+  } else {
+    sectionDividerResponsiveFinal.style.display = 'none';
+  }
 
   function hideElementOnLargeScreens() {
     var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -577,7 +585,6 @@ orderSuccessBtn.addEventListener('click', () => {
   cancelCardSection.style.display = 'none';
   // footerContainer.style.display = 'none';
   cancelAdditionalCardId.style.display = 'none';
-  additionalCardID.style.display = 'none';
   indexContinueBtnCan.style.display = 'none';
   btnCancelFinal.style.display = 'none';
   coutdownContainerSuccess.style.display = 'none';

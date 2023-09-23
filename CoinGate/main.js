@@ -111,6 +111,7 @@ payWithCryptoOption.addEventListener('click', () => {
 payWithBinanceOption.addEventListener('click', () => {
   // Hide the coingate-cryptos when Pay with Binance Pay is clicked
   coingateCryptos.style.display = 'none';
+  enablecontinueButton();
 });
 
 //Blue btn script
@@ -474,6 +475,10 @@ const timer = document.getElementById('coutdownContainer');
 const payWalletContainer = document.getElementById('pay-wallet-container');
 const paySummaryCard = document.getElementById('pay-summary-card');
 const sectionDivider = document.getElementById('sectionDivider');
+const formContinueBtn = document.getElementById('form-continue-btn');
+const formContinueBtnWo = document.getElementById('form-continue-btn-wo');
+const goBackPrevEmail = document.getElementById('goBackEmail');
+const selectNetworkGoBackPrev = document.getElementById('selectNetworkGoBack');
 
 let currentBlockIndex = 0;
 
@@ -508,6 +513,58 @@ toggleButtonVisibility();
 
 // Add a click event listener to the common "Continue" button
 nextBtn.addEventListener('click', () => {
+  // Check if the button is active (not disabled)
+  if (!nextBtn.hasAttribute('disabled')) {
+    // If we are not at the last block, hide the current block and show the next block
+    if (currentBlockIndex < blocks.length - 1) {
+      blocks[currentBlockIndex].style.display = 'none';
+      currentBlockIndex++;
+      blocks[currentBlockIndex].style.display = 'flex';
+    }
+
+    // Toggle the visibility of buttons
+    toggleButtonVisibility();
+  }
+});
+goBackPrevEmail.addEventListener('click', () => {
+  // If we are not at the first block, hide the current block and show the previous block
+  if (currentBlockIndex > 0) {
+    blocks[currentBlockIndex].style.display = 'none';
+    currentBlockIndex--;
+    blocks[currentBlockIndex].style.display = 'flex';
+  }
+
+  // Toggle the visibility of buttons
+  toggleButtonVisibility();
+});
+
+selectNetworkGoBackPrev.addEventListener('click', () => {
+  // If we are not at the first block, hide the current block and show the previous block
+  if (currentBlockIndex > 0) {
+    blocks[currentBlockIndex].style.display = 'none';
+    currentBlockIndex--;
+    blocks[currentBlockIndex].style.display = 'flex';
+  }
+
+  // Toggle the visibility of buttons
+  toggleButtonVisibility();
+});
+
+formContinueBtn.addEventListener('click', () => {
+  event.preventDefault();
+  // If we are not at the last block, hide the current block and show the next block
+  if (currentBlockIndex < blocks.length - 1) {
+    blocks[currentBlockIndex].style.display = 'none';
+    currentBlockIndex++;
+    blocks[currentBlockIndex].style.display = 'flex';
+  }
+
+  // Toggle the visibility of buttons
+  toggleButtonVisibility();
+});
+
+formContinueBtnWo.addEventListener('click', () => {
+  event.preventDefault();
   // If we are not at the last block, hide the current block and show the next block
   if (currentBlockIndex < blocks.length - 1) {
     blocks[currentBlockIndex].style.display = 'none';

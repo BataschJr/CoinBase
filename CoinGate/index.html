@@ -207,10 +207,8 @@
               </svg>
             </button>
           </div>
-          <div class="go-back" id="goBack">
-            <a href="">
-              <p>Go back</p>
-            </a>
+          <div class="go-back" id="goBackEmail">
+            <p>Go back</p>
           </div>
           <p class="email-refund-text">Email needed for CoinGate receipt and refund. </p>
         </div>
@@ -227,9 +225,9 @@
           </form>
 
           <div class="form-btns">
-            <a class="form-continue-btn" type="button" href="pay-wallet.html">Continue
+            <a class="form-continue-btn" type="button" href="" id="form-continue-btn">Continue
             </a>
-            <a class="form-wo-continue-btn" type="button" href="pay-wallet.html">
+            <a class="form-wo-continue-btn" type="button" href="" id="form-continue-btn-wo">
               Continue without email
             </a>
           </div>
@@ -305,37 +303,37 @@
             <div class="crypto-list-container">
               <div class="crypo-list">
                 <div class="pay-option-1-list flex border-radius">
-                  <div class="crypto-logo">
+                  <div class="crypto-logo" style="height: 30px;">
                     <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
                   </div>
-                  <div class="pay-method-title" id="title-2">
+                  <div class="pay-method-title" id="title-2" style="display: flex; align-items: center;">
                     <p class="pay-main">Ethereum</p>
                     <i class="fa-regular fa-circle-check"></i>
                   </div>
                 </div>
                 <div class="pay-option-1-list flex border-radius">
-                  <div class="crypto-logo">
+                  <div class="crypto-logo" style="height: 30px;">
                     <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
                   </div>
-                  <div class="pay-method-title" id="title-2">
+                  <div class="pay-method-title" id="title-2" style="display: flex; align-items: center;">
                     <p class="pay-main">Cardano</p>
                     <i class="fa-regular fa-circle-check"></i>
                   </div>
                 </div>
                 <div class="pay-option-1-list flex border-radius">
-                  <div class="crypto-logo">
+                  <div class="crypto-logo" style="height: 30px;">
                     <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
                   </div>
-                  <div class="pay-method-title" id="title-2">
+                  <div class="pay-method-title" id="title-2" style="display: flex; align-items: center;">
                     <p class="pay-main">Binance Coin</p>
                     <i class="fa-regular fa-circle-check"></i>
                   </div>
                 </div>
                 <div class="pay-option-1-list flex border-radius">
-                  <div class="crypto-logo">
+                  <div class="crypto-logo" style="height: 30px;">
                     <img src="/Coingate-26829/Coingate.png" alt="crypto-logo">
                   </div>
-                  <div class="pay-method-title" id="title-2">
+                  <div class="pay-method-title" id="title-2" style="display: flex; align-items: center;">
                     <p class="pay-main">Litecoin</p>
                     <i class="fa-regular fa-circle-check"></i>
                   </div>
@@ -381,7 +379,7 @@
 
     <!-- pay wallet template -->
     <div class="card-gradient flex card-shadow" id="pay-wallet-container">
-      <div class="main-card" id="payMainCard">
+      <div class="main-card-pay" id="payMainCard">
         <div class="email-card">
           <div class="email-card-header flex">
             <h1 class="primary-heading">
@@ -470,8 +468,8 @@
           </div>
           <div class="copyAddress-container flex">
             <div class="copy-address-bar" id="copyAddress">
-              <p id="copyAddressText" class="">
-                0x48fb6307C2318f0D73...
+              <p id="copyAddressText" class="address-text">
+                addr1qx4ctqdu6ggq8s3a0rg6dklffqmqksqe9fvc5gv8p88wmcmdj0dx2dxa7qkplv0sp6wuxhjcycxgfd08ug3pu2amlhzs0yemeg
               </p>
               <div class="icon-container" id="iconContainer">
                 <i class="fa-solid fa-copy" id="copyAddressBtn"></i>
@@ -753,7 +751,9 @@
           <div>
             <div class="countdown-container" style="display: none;" id="coutdownContainer">
               <div class="countdown-rectangle" id="countdownRectangle">
-                <div class="countdown-timer" id="countdownTimer">20:00</div>
+                <div class="countdown-timer-container">
+                  <div class="countdown-timer" id="countdownTimer">20:00</div>
+                </div>
               </div>
             </div>
             <a class="footer-btn-primary-success" href="" id="returnMerchant" style="display: none;">Return to Merchant

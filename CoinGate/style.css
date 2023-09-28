@@ -120,7 +120,7 @@ svg {
   left: 0;
   right: 0;
   top: 55%; /* Position it just below the card */
-  height: 70px; /* Adjust this height as needed for the fading effect */
+  height: 100px; /* Adjust this height as needed for the fading effect */
   background: linear-gradient(to bottom, rgba(204, 204, 204, 0) 0%, rgb(255, 255, 255) 100%);
   z-index: -1;
   rotate: -180deg;
@@ -249,14 +249,14 @@ svg {
   content: '';
   z-index: -1;
   width: 100%;
-  height: 60%;
+  height: 55%;
   left: 50%;
   background-color: #fff;
   -webkit-transform: translate(-50%, 0);
   -moz-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  max-width: 694px;
+  /* max-width: 694px; */
   box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.05);
   -webkit-clip-path: inset(-30px -30px 0px -30px);
   clip-path: inset(-30px -30px 0px -30px);
@@ -330,7 +330,8 @@ svg {
   border: 1px solid rgb(196, 200, 207);
 }
 
-.pay-option-1-list {
+.pay-option-1-list,
+.pay-option-2-list {
   width: 100%;
   height: 100%;
   padding: 25px;
@@ -338,10 +339,12 @@ svg {
   background-color: #fff;
   border: 1px solid transparent;
 }
-.pay-option-1-list:hover {
+.pay-option-1-list:hover,
+.pay-option-2-list:hover {
   cursor: pointer;
 }
-.pay-option-1-list:hover:not(.active) {
+.pay-option-1-list:hover:not(.active),
+.pay-option-2-list:hover:not(.active) {
   border: 1px solid rgb(196, 200, 207);
 }
 
@@ -508,6 +511,10 @@ footer {
   font-weight: 600;
   background-color: rgb(113, 93, 221);
   color: rgb(255, 255, 255);
+}
+
+.footer-btn-primary:hover {
+  background-color: rgb(85, 65, 187);
 }
 
 .footer-btn-info,
@@ -1253,7 +1260,7 @@ a {
 }
 
 .countdown-rectangle {
-  width: 70px; /* Set your desired fixed width here */
+  width: 90px; /* Set your desired fixed width here */
   border: 2px solid var(--clr-btn);
   display: flex;
   justify-content: center;
@@ -1317,6 +1324,7 @@ a {
   position: absolute;
   top: 36%;
   left: 38%;
+  transform: translateX(-20%);
   z-index: 3;
 }
 
@@ -1757,16 +1765,11 @@ a {
 
 .pop-qr-code {
   background-color: #fff;
-  padding: 40px;
   border-radius: 16px;
   margin: auto;
   max-height: calc(100% - 64px);
-  padding: 20px;
+  padding: 30px;
   max-width: 100%;
-  position: absolute;
-  top: 20%;
-  left: 15%;
-  z-index: 3;
 }
 .pop-qrCode-text {
   font-size: 1rem;
@@ -1819,12 +1822,81 @@ a {
   display: none;
 }
 
+.alertElement {
+  position: absolute;
+  top: 82%;
+  right: 18%;
+  background-color: white;
+  border: none;
+  padding: 10px 30px;
+  display: none;
+  align-items: center;
+  border-radius: 10px 10px 0px 10px;
+  font-size: 12px;
+}
+
+.alertElement-val {
+  position: absolute;
+  top: 70%;
+  right: 18%;
+  transform: translate(0, -50%); /* Center vertically */
+  background-color: white;
+  border: none;
+  padding: 10px 30px;
+  display: none;
+  align-items: center;
+  border-radius: 10px 10px 0px 10px;
+  font-size: 12px;
+}
+
+.alertElement-text {
+  color: #00000070;
+}
+
+.alertElement-icon {
+  color: green;
+  font-size: 12px;
+  position: relative;
+  top: 50%;
+  left: 5%;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+}
+
+.hidden {
+  display: none;
+}
+
 @keyframes countdown-animation {
   0% {
     width: 100%;
   }
   100% {
     width: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -1924,6 +1996,16 @@ a {
   .display-success-card {
     justify-content: space-between;
   }
+
+  .alertElement {
+    top: 75%;
+    right: 10%;
+  }
+
+  .alertElement-val {
+    top: 58%;
+    right: 9%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1986,5 +2068,15 @@ a {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .alertElement {
+    top: 78%;
+    right: 16%;
+  }
+
+  .alertElement-val {
+    top: 65%;
+    right: 16%;
   }
 }

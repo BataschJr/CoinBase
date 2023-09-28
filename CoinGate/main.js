@@ -423,8 +423,18 @@ document.addEventListener('click', (event) => {
   if (!popQrCode.contains(event.target) && event.target !== qrCopyBtn) {
     popQrCode.style.display = 'none';
     overlay.style.display = 'none';
+  } else {
+    popQrCode.style.display = 'block';
+    overlay.style.display = 'block';
   }
 });
+
+// popQrCode.addEventListener('click', (event) => {
+//   if (popQrCode.contains(event.target)) {
+//     popQrCode.style.display = 'block';
+//     overlay.style.display = 'block';
+//   }
+// });
 
 qrBtn.addEventListener('click', () => {
   event.stopPropagation();
@@ -525,7 +535,19 @@ nextBtn.addEventListener('click', () => {
     // Toggle the visibility of buttons
     toggleButtonVisibility();
   }
+
+  const selectNetworkContainer = document.getElementById('select-network-container');
+
+  if (selectNetworkContainer.style.display === 'flex') {
+    // If it's displayed, disable the "Continue" button and set the flag
+    disablecontinueButton();
+  }
+  cryptoListItems.forEach((cryptoItem) => {
+    cryptoItem.classList.remove('active'); // Remove 'active' from all crypto-list items
+  });
+  element.classList.add('active'); // Add 'active' to the clicked crypto-list item
 });
+
 goBackPrevEmail.addEventListener('click', () => {
   // If we are not at the first block, hide the current block and show the previous block
   if (currentBlockIndex > 0) {
@@ -536,6 +558,7 @@ goBackPrevEmail.addEventListener('click', () => {
 
   // Toggle the visibility of buttons
   toggleButtonVisibility();
+  enablecontinueButton();
 });
 
 selectNetworkGoBackPrev.addEventListener('click', () => {
@@ -606,13 +629,6 @@ confirmCancelBtn.addEventListener('click', () => {
   cancelCardContainer.style.display = 'flex';
   returnMerchant.style.display = 'inline-flex';
 
-  if (currentBlockIndex === blocks.length - 1) {
-    summaryCancelFinal.style.display = 'flex';
-    sectionDividerResponsiveFinal.style.display = 'block';
-  } else {
-    sectionDividerResponsiveFinal.style.display = 'none';
-  }
-
   function hideElementOnLargeScreens() {
     var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
@@ -626,6 +642,13 @@ confirmCancelBtn.addEventListener('click', () => {
   // Call the function on page load and whenever the window is resized
   window.onload = hideElementOnLargeScreens;
   window.addEventListener('resize', hideElementOnLargeScreens);
+
+  if (currentBlockIndex === blocks.length - 1) {
+    summaryCancelFinal.style.display = 'flex';
+    sectionDividerResponsiveFinal.style.display = 'block';
+  } else {
+    sectionDividerResponsiveFinal.style.display = 'none';
+  }
 });
 
 //script to display successful card
@@ -747,4 +770,124 @@ successGoBackFinal.addEventListener('click', () => {
 
 successFooterBtn1Final.addEventListener('click', (event) => {
   event.stopPropagation(); // Prevent the click event from propagating to the document
+});
+
+const copyAddressText = document.getElementById('copyAddressText');
+const copyAddressBtn = document.getElementById('copyAddressBtn');
+
+// Add a click event listener to the icon container
+copyAddressBtn.addEventListener('click', function () {
+  // Get the text content and trim any leading/trailing whitespace
+  const textToCopy = copyAddressText.textContent.trim();
+
+  // Create a new textarea element
+  const textarea = document.createElement('textarea');
+  textarea.value = textToCopy;
+
+  // Set the textarea to be invisible
+  textarea.style.position = 'absolute';
+  textarea.style.left = '-9999px';
+
+  // Append the textarea to the body
+  document.body.appendChild(textarea);
+
+  // Select the trimmed text in the textarea and copy it to the clipboard
+  textarea.select();
+  document.execCommand('copy');
+
+  // Remove the textarea
+  document.body.removeChild(textarea);
+});
+
+const copyValue = document.getElementById('copyValue');
+const copyButton = document.getElementById('copyButton');
+
+// Add a click event listener to the icon container
+copyButton.addEventListener('click', function () {
+  // Get the text content and trim any leading/trailing whitespace
+  const textToCopy = copyValue.textContent.trim();
+
+  // Create a new textarea element
+  const textarea = document.createElement('textarea');
+  textarea.value = textToCopy;
+
+  // Set the textarea to be invisible
+  textarea.style.position = 'absolute';
+  textarea.style.left = '-9999px';
+
+  // Append the textarea to the body
+  document.body.appendChild(textarea);
+
+  // Select the trimmed text in the textarea and copy it to the clipboard
+  textarea.select();
+  document.execCommand('copy');
+
+  // Remove the textarea
+  document.body.removeChild(textarea);
+});
+
+const copyAddress = document.getElementById('copyAddress');
+const alertElement = document.getElementById('alertElement');
+
+copyAddress.addEventListener('click', () => {
+  // Remove the 'hidden' class to show the alert element
+  alertElement.style.display = 'flex';
+
+  // Apply fade-in animation by gradually increasing opacity
+  alertElement.style.opacity = '0';
+  const fadeInInterval = setInterval(() => {
+    const currentOpacity = parseFloat(alertElement.style.opacity);
+    if (currentOpacity < 1) {
+      alertElement.style.opacity = (currentOpacity + 0.05).toString();
+    } else {
+      clearInterval(fadeInInterval);
+
+      // Set a timeout to start fading out after 2 seconds
+      setTimeout(() => {
+        // Apply fade-out animation by gradually decreasing opacity
+        const fadeOutInterval = setInterval(() => {
+          const currentOpacity = parseFloat(alertElement.style.opacity);
+          if (currentOpacity > 0) {
+            alertElement.style.opacity = (currentOpacity - 0.05).toString();
+          } else {
+            clearInterval(fadeOutInterval);
+            alertElement.style.display = 'none'; // Hide the element
+          }
+        }, 50); // Adjust the interval for smoother fading
+      }, 1000); // Wait for 2 seconds before starting the fade-out
+    }
+  }, 50); // Adjust the interval for smoother fading
+});
+
+const copyBar = document.getElementById('copyBar');
+const alertElementVal = document.getElementById('alertElementVal');
+
+copyBar.addEventListener('click', () => {
+  // Remove the 'hidden' class to show the alert element
+  alertElementVal.style.display = 'flex';
+
+  // Apply fade-in animation by gradually increasing opacity
+  alertElementVal.style.opacity = '0';
+  const fadeInInterval = setInterval(() => {
+    const currentOpacity = parseFloat(alertElementVal.style.opacity);
+    if (currentOpacity < 1) {
+      alertElementVal.style.opacity = (currentOpacity + 0.05).toString();
+    } else {
+      clearInterval(fadeInInterval);
+
+      // Set a timeout to start fading out after 2 seconds
+      setTimeout(() => {
+        // Apply fade-out animation by gradually decreasing opacity
+        const fadeOutInterval = setInterval(() => {
+          const currentOpacity = parseFloat(alertElementVal.style.opacity);
+          if (currentOpacity > 0) {
+            alertElementVal.style.opacity = (currentOpacity - 0.05).toString();
+          } else {
+            clearInterval(fadeOutInterval);
+            alertElementVal.style.display = 'none'; // Hide the element
+          }
+        }, 50); // Adjust the interval for smoother fading
+      }, 1000); // Wait for 2 seconds before starting the fade-out
+    }
+  }, 50); // Adjust the interval for smoother fading
 });

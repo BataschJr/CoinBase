@@ -24,22 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
   let originalText = ''; // Variable to store the original text
 
   // Function to store the original text and hide overflow
-  function storeOriginalTextAndHideOverflow() {
-    const copyAddressText = document.getElementById('copyAddressText');
-    originalText = copyAddressText.textContent.trim();
-    copyAddressText.style.overflow = 'hidden';
-    copyAddressText.style.whiteSpace = 'nowrap';
-    copyAddressText.style.textOverflow = 'ellipsis';
-  }
+  // function storeOriginalTextAndHideOverflow() {
+  //   const copyAddressText = document.getElementById('copyAddressText');
+  //   originalText = copyAddressText.textContent.trim();
+  //   copyAddressText.style.overflow = 'hidden';
+  //   copyAddressText.style.whiteSpace = 'nowrap';
+  //   copyAddressText.style.textOverflow = 'ellipsis';
+  // }
 
-  // Function to restore the original text and show full text
-  function restoreOriginalTextAndShowFull() {
-    const copyAddressText = document.getElementById('copyAddressText');
-    copyAddressText.textContent = originalText; // Restore the original text
-    copyAddressText.style.overflow = 'hidden'; // Show full text
-    copyAddressText.style.whiteSpace = 'normal';
-    copyAddressText.style.textOverflow = 'clip';
-  }
+  // // Function to restore the original text and show full text
+  // function restoreOriginalTextAndShowFull() {
+  //   const copyAddressText = document.getElementById('copyAddressText');
+  //   copyAddressText.textContent = originalText; // Restore the original text
+  //   copyAddressText.style.overflow = 'hidden'; // Show full text
+  //   copyAddressText.style.whiteSpace = 'normal';
+  //   copyAddressText.style.textOverflow = 'clip';
+  // }
 
   // Call the function to initially store the original text and hide overflow
   storeOriginalTextAndHideOverflow();

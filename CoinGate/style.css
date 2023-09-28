@@ -1927,7 +1927,7 @@ a {
   }
 
   .main-card-pay {
-    width: 90%;
+    width: 100%;
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -2060,7 +2060,7 @@ a {
   }
 
   .main-card-pay {
-    width: 80%;
+    width: 100%;
     padding-left: 24px;
     padding-right: 24px;
   }

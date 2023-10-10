@@ -399,7 +399,7 @@ function startCountdown(minutes) {
 }
 
 // Start the countdown with 20 minutes
-startCountdown(20);
+// startCountdown(20);
 
 const popQrCode = document.getElementById('popQrCode');
 const qrCopyBtn = document.getElementById('qr-btn-container');
@@ -503,11 +503,11 @@ blocks.forEach((block, index) => {
 function toggleButtonVisibility() {
   if (currentBlockIndex === blocks.length - 1) {
     // If Block 4 is active, hide the "Continue" button and show the "Another Button"
+    startCountdown(20);
     paySummaryCard.style.display = 'block';
     nextBtn.style.display = 'none';
     timer.style.display = 'inline-flex';
     sectionDivider.style.display = 'block';
-
     // returnMerchant.style.display = 'none';
   } else {
     // Otherwise, show the "Continue" button and hide the "Another Button"
@@ -571,10 +571,12 @@ selectNetworkGoBackPrev.addEventListener('click', () => {
 
   // Toggle the visibility of buttons
   toggleButtonVisibility();
+  enablecontinueButton();
 });
 
 formContinueBtn.addEventListener('click', () => {
   event.preventDefault();
+  disablecontinueButton();
   // If we are not at the last block, hide the current block and show the next block
   if (currentBlockIndex < blocks.length - 1) {
     blocks[currentBlockIndex].style.display = 'none';
@@ -584,10 +586,17 @@ formContinueBtn.addEventListener('click', () => {
 
   // Toggle the visibility of buttons
   toggleButtonVisibility();
+
+  cryptoListItems.forEach((cryptoItem) => {
+    cryptoItem.classList.remove('active'); // Remove 'active' from all crypto-list items
+  });
+  element.classList.add('active');
 });
 
 formContinueBtnWo.addEventListener('click', () => {
   event.preventDefault();
+  disablecontinueButton();
+
   // If we are not at the last block, hide the current block and show the next block
   if (currentBlockIndex < blocks.length - 1) {
     blocks[currentBlockIndex].style.display = 'none';
@@ -597,6 +606,11 @@ formContinueBtnWo.addEventListener('click', () => {
 
   // Toggle the visibility of buttons
   toggleButtonVisibility();
+
+  cryptoListItems.forEach((cryptoItem) => {
+    cryptoItem.classList.remove('active'); // Remove 'active' from all crypto-list items
+  });
+  element.classList.add('active');
 });
 
 const confirmCancelBtn = document.getElementById('confirm-cancel');

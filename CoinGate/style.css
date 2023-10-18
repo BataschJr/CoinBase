@@ -1117,13 +1117,14 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
+  position: relative;
 }
 
 .copyAddress-container {
   display: flex;
   align-items: center;
   max-width: 100%;
-  overflow: hidden; /* Hide overflowing content */
+  overflow: hidden; /*Hide overflowing content*/
   text-overflow: ellipsis; /* Show ellipsis (...) for hidden text */
   white-space: nowrap; /* Prevent text from wrapping */
 }
@@ -1157,8 +1158,8 @@ a {
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  overflow: hidden; /* Hide overflowing content */
-  width: 100%; /* Set a maximum width for the container */
+  overflow: hidden; /*Hide overflowing content*/
+  width: 100%; /*Set a maximum width for the container*/
 }
 
 .copy-address-bar:hover {
@@ -1270,14 +1271,17 @@ a {
   margin-right: 5px;
   border-radius: 8px;
   min-height: 40px;
-  min-width: 42px;
+  /* min-width: 42px; */
   padding: 5px 15px;
   color: var(--clr-btn);
 }
 
 .countdown-timer-container {
   width: 100%; /* This container takes 100% width */
-  text-align: center; /* Center text horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /*Center text horizontally*/
 }
 
 .countdown-timer {
@@ -1824,8 +1828,9 @@ a {
 
 .alertElement {
   position: absolute;
-  top: 82%;
-  right: 18%;
+  top: 60%;
+  right: 10%;
+  transform: translate(0, -50%); /*Center vertically*/
   background-color: white;
   border: none;
   padding: 10px 30px;
@@ -1837,8 +1842,8 @@ a {
 
 .alertElement-val {
   position: absolute;
-  top: 70%;
-  right: 18%;
+  top: -50%;
+  right: 10%;
   transform: translate(0, -50%); /* Center vertically */
   background-color: white;
   border: none;
@@ -1998,12 +2003,12 @@ a {
   }
 
   .alertElement {
-    top: 75%;
+    top: 60%;
     right: 10%;
   }
 
   .alertElement-val {
-    top: 58%;
+    top: -50%;
     right: 9%;
   }
 }
@@ -2071,12 +2076,13 @@ a {
   }
 
   .alertElement {
-    top: 78%;
-    right: 16%;
+    /* transform: translateY(-50%) ; */
+    top: 59%;
+    right: 10%;
   }
 
   .alertElement-val {
-    top: 65%;
-    right: 16%;
+    top: -57%;
+    right: 10%;
   }
 }

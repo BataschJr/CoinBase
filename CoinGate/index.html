@@ -452,7 +452,7 @@
             <i class="fa-solid fa-circle-exclamation"></i>
             <p class="small-text-mobile css-4m3aef">Selected network: Ethereum</p>
           </div>
-          <div class="copyValues-container flex" style="margin-bottom: 20px;">
+          <div class="copyValues-container flex" style="position: relative;">
             <div class="alertElement-val" id="alertElementVal">
               <p class="alertElement-text">Value copied successfully</p>
               <i class="fa-regular fa-circle-check alertElement-icon"></i>
@@ -470,12 +470,12 @@
               Address
             </p>
           </div>
-          <div class="copyAddress-container flex">
+          <div class="alertElement" id="alertElement">
+            <p class="alertElement-text">Address copied successfully</p>
+            <i class="fa-regular fa-circle-check alertElement-icon"></i>
+          </div>
+          <div class="copyAddress-container flex" style="position: relative;">
             <div class="copy-address-bar" id="copyAddress">
-              <div class="alertElement" id="alertElement">
-                <p class="alertElement-text">Address copied successfully</p>
-                <i class="fa-regular fa-circle-check alertElement-icon"></i>
-              </div>
               <p id="copyAddressText" class="address-text">
                 addr1qx4ctqdu6ggq8s3a0rg6dklffqmqksqe9fvc5gv8p88wmcmdj0dx2dxa7qkplv0sp6wuxhjcycxgfd08ug3pu2amlhzs0yemeg
               </p>
@@ -483,7 +483,6 @@
                 <i class="fa-solid fa-copy" id="copyAddressBtn"></i>
               </div>
             </div>
-
             <div class="Address-btn" id="addressBtn">
               <i class="fa-solid fa-qrcode" id="addressCopyBtn"></i>
             </div>
